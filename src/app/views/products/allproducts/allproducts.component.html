@@ -1,1 +1,23 @@
-<p>allproducts works!</p>
+<ul *ngFor="let el of product;let inx=index">
+  <li>{{el.title}}</li>
+  <li>{{el.descrption}}</li>
+  <li>{{el.Brand}}</li>
+  <li>{{el.price}}</li>
+  <li>{{el.quantity}}</li>
+  <li>{{el.category}}</li>
+  <li>{{el.color}}</li>
+  <li>{{el.totalRatings}}</li>
+  <li><img *ngFor="let img of el.images" src="data:image/png;base64,{{img}}" width="200px"></li>
+  <div class="rating">
+    <input id="star5" name="star" type="radio" (click)="rate($event,el._id,inx)" value="5" class="radio-btn hide" />
+    <label for="star5">☆</label>
+    <input id="star4" name="star" type="radio" (click)="rate($event,el._id,inx)" value="4" class="radio-btn hide" />
+    <label for="star4">☆</label>
+    <input id="star3" name="star" type="radio" (click)="rate($event,el._id,inx)" value="3" class="radio-btn hide" />
+    <label for="star3">☆</label>
+    <input id="star2" name="star" type="radio" (click)="rate($event,el._id,inx)" value="2" class="radio-btn hide" />
+    <label for="star2">☆</label>
+    <input id="star1" name="star" type="radio" (click)="rate($event,el._id,inx)" value="1" class="radio-btn hide" />
+    <label for="star1">☆</label>
+  </div>
+</ul>

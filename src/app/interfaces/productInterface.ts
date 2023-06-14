@@ -7,7 +7,7 @@ export interface Product {
   quantity?: number,
   images?: [any],
   color?: string,
-  ratings?: { star: number, comment: string, postedBy: any },
+  ratings?: any,
   totalRatings?: number,
   views?: number,
   Brand?: string,
