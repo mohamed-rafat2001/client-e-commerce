@@ -15,15 +15,10 @@ import { DeleteAcountComponent } from './user/delete-acount/delete-acount.compon
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
 import { AboutComponent } from './views/about/about.component';
-import { ProductCategoryService } from './services/productCategory/product-category.service';
-import { BrandCategoryService } from './services/brandCategory/brand-category.service';
-import { BlogCategoryService } from './services/blogCategory/blog-category.service';
 import { AuthService } from './services/auth/auth.service';
 import { AdminService } from './services/admin/admin.service';
 import { CartService } from './services/cart/cart.service';
 import { OrderService } from './services/order/order.service';
-import { ProductsService } from './services/products/products.service';
-import { BlogService } from './services/blog/blog.service';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AllUsersComponent } from './admin/all-users/all-users.component';
 import { AllAdminsComponent } from './admin/all-admins/all-admins.component';
@@ -57,6 +52,7 @@ import { SingleBlogComponent } from './views/blog/single-blog/single-blog.compon
 import { AddProductComponent } from './admin/productCtrl/add-product/add-product.component';
 import { UpdateProductComponent } from './admin/productCtrl/update-product/update-product.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
 
 
 @NgModule({
@@ -103,7 +99,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     AllBlogComponent,
     SingleBlogComponent,
     AddProductComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AllProductListComponent
 
   ],
   imports: [
@@ -113,15 +110,10 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HttpClientModule
   ],
   providers: [
-    ProductCategoryService,
-    BrandCategoryService,
-    BlogCategoryService,
     AuthService,
     AdminService,
     CartService,
     OrderService,
-    ProductsService,
-    BlogService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptorService,
