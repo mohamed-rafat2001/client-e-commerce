@@ -44,6 +44,6 @@ export class AuthService {
   }
   //addWishList
   addWishList(id: any) {
-    return this.http.get(this.url + 'wishList/:' + id)
+    return this.http.patch(this.url + 'toWishList/' + id, "")
   }
 }

@@ -9,7 +9,6 @@ import { UpdateProfileComponent } from './user/update-profile/update-profile.com
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
 import { GetComponent } from './user/wishList/get/get.component';
-import { AddComponent } from './user/wishList/add/add.component';
 import { AuthGardeService } from './services/authGarde/auth-garde.service';
 import { AdminComponent } from './admin/admin.component';
 import { AllAdminsComponent } from './admin/all-admins/all-admins.component';
@@ -17,6 +16,7 @@ import { AllUsersComponent } from './admin/all-users/all-users.component';
 import { AddProductComponent } from './admin/productCtrl/add-product/add-product.component';
 import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
 import { UpdateProductComponent } from './admin/productCtrl/update-product/update-product.component';
+import { SingleproductComponent } from './views/products/singleproduct/singleproduct.component';
 
 const routes: Routes = [
   //admin
@@ -26,6 +26,8 @@ const routes: Routes = [
   { path: 'admin/addProduct', component: AddProductComponent },
   { path: 'admin/productList', component: AllProductListComponent },
   { path: 'admin/updateProduct/:id', component: UpdateProductComponent },
+  { path: 'singleProduct/:id', component: SingleproductComponent },
+
 
 
   //nav-bar links
@@ -41,8 +43,6 @@ const routes: Routes = [
   { path: 'resetPassword', component: ResetPasswordComponent, canActivate: [AuthGardeService] },
   //wishList
   { path: 'wishList', component: GetComponent, canActivate: [AuthGardeService] },
-  { path: 'wishList/add', component: AddComponent, canActivate: [AuthGardeService] }
-
 ];
 
 @NgModule({

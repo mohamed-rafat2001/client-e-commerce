@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/interfaces/productInterface';
+import { User } from 'src/app/interfaces/userInterface';
+import { AdminService } from 'src/app/services/admin/admin.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-singleproduct',
@@ -7,9 +12,52 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleproductComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminService: AdminService, private route: ActivatedRoute, private authService: AuthService) { }
+  id: string = this.route.snapshot.params['id']
+  product: Product = {}
+  singleProduct() {
+    this.adminService.getProduct(this.id).subscribe({
+      next: (res: any) => {
+        this.product = res
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+  }
+  user?: User = {}
+  getUser() {
+    this.authService.profile().subscribe({
+      next: (res: any) => {
+        this.user = res
+      },
+      error: (err: any) => console.log(err)
+    })
+  }
+  toWishList() {
+    this.authService.addWishList(this.id).subscribe({
+      next: (res: any) => {
+        return this.user = res
+      },
+      error: (err: any) => console.log(err)
+    })
+  }
+  add1() {
+    if (this.user) {
+      let pro = this.user.wishList?.includes(this.id)
+      if (pro == true) {
+        return true
+      }
+      return false
+    }
+    else {
+      return false
+    }
+  }
 
   ngOnInit(): void {
+    this.singleProduct()
+    this.getUser()
   }
 
 }

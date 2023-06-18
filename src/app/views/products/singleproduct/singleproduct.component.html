@@ -1,1 +1,14 @@
-<p>singleproduct works!</p>
+<ul>
+  <li>{{product.title}}</li>
+  <li>{{product.descrption}}</li>
+  <li>{{product.Brand}}</li>
+  <li>{{product.price}}</li>
+  <li>{{product.quantity}}</li>
+  <li>{{product.category}}</li>
+  <li>{{product.color}}</li>
+  <li>{{product.totalRatings}}</li>
+  <li>{{product.views}}</li>
+  <li><img *ngFor="let img of product.images" src="data:image/png;base64,{{img}}" width="200px"></li>
+  <button type="button" (click)="toWishList()" *ngIf="!add1()">add</button>
+  <button type="button" (click)="toWishList()" *ngIf="add1()">remove</button>
+</ul>

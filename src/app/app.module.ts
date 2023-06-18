@@ -30,7 +30,6 @@ import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
 import { AddCartComponent } from './user/cart/add-cart/add-cart.component';
 import { UpdateCartComponent } from './user/cart/update-cart/update-cart.component';
 import { AddOrderComponent } from './user/order/add-order/add-order.component';
-import { AddComponent } from './user/wishList/add/add.component';
 import { GetComponent } from './user/wishList/get/get.component'
 import { SingleCartComponent } from './user/cart/single-cart/single-cart.component';
 import { SingleOrderComponent } from './user/order/single-order/single-order.component';
@@ -81,7 +80,6 @@ import { AllProductListComponent } from './admin/productCtrl/all-product-list/al
     AddCartComponent,
     UpdateCartComponent,
     AddOrderComponent,
-    AddComponent,
     GetComponent,
     UpdateBlogComponent,
     AddBlogComponent,
