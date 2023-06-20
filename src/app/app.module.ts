@@ -27,7 +27,6 @@ import { AllOrdersComponent } from './admin/all-orders/all-orders.component';
 import { SearchAboutOrderComponent } from './admin/search-about-order/search-about-order.component';
 import { SearchAboutUserComponent } from './admin/search-about-user/search-about-user.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
-import { AddCartComponent } from './user/cart/add-cart/add-cart.component';
 import { UpdateCartComponent } from './user/cart/update-cart/update-cart.component';
 import { AddOrderComponent } from './user/order/add-order/add-order.component';
 import { GetComponent } from './user/wishList/get/get.component'
@@ -77,7 +76,6 @@ import { AllProductListComponent } from './admin/productCtrl/all-product-list/al
     SearchAboutUserComponent,
     AdminLoginComponent,
     SingleCartComponent,
-    AddCartComponent,
     UpdateCartComponent,
     AddOrderComponent,
     GetComponent,

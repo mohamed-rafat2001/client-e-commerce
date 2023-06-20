@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,27 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  url: string = "http://localhost:4000/"
+  //add product to cart
+  addToCart(body: any) {
+    return this.http.post(this.url + "cart/", body)
+  }
+  // get cart
+  getCart() {
+    return this.http.get(this.url + "cart/")
+  }
+  //update cart
+  updateCart(body: any) {
+    return this.http.patch(this.url + "cart/", body)
+  }
+  //delete all cart
+  deleteCart() {
+    return this.http.delete(this.url + "cart")
+  }
+  //delete product from cart
+  dltProFromCart(id: any) {
+    return this.http.delete(this.url + "cart/product/" + id)
+  }
 }
+
