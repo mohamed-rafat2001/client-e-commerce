@@ -3,7 +3,6 @@ export interface Cart {
   products?: [{
     count: Number,
     product: any,
-
     color: string,
   }],
 }

@@ -10,18 +10,18 @@
   <li>{{el.views}}</li>
   <li><img *ngFor="let img of el.images" src="data:image/png;base64,{{img}}" width="200px"></li>
   <div class="rating">
-    <input id="star5" name="star" type="radio" (click)="rate($event,el._id,inx)" value="5" class="radio-btn hide" />
+    <input id="star5" name="star" type="radio" (click)="rate($event,el._id)" value="5" class="radio-btn hide" />
     <label for="star5">☆</label>
-    <input id="star4" name="star" type="radio" (click)="rate($event,el._id,inx)" value="4" class="radio-btn hide" />
+    <input id="star4" name="star" type="radio" (click)="rate($event,el._id)" value="4" class="radio-btn hide" />
     <label for="star4">☆</label>
-    <input id="star3" name="star" type="radio" (click)="rate($event,el._id,inx)" value="3" class="radio-btn hide" />
+    <input id="star3" name="star" type="radio" (click)="rate($event,el._id)" value="3" class="radio-btn hide" />
     <label for="star3">☆</label>
-    <input id="star2" name="star" type="radio" (click)="rate($event,el._id,inx)" value="2" class="radio-btn hide" />
+    <input id="star2" name="star" type="radio" (click)="rate($event,el._id)" value="2" class="radio-btn hide" />
     <label for="star2">☆</label>
-    <input id="star1" name="star" type="radio" (click)="rate($event,el._id,inx)" value="1" class="radio-btn hide" />
+    <input id="star1" name="star" type="radio" (click)="rate($event,el._id)" value="1" class="radio-btn hide" />
     <label for="star1">☆</label>
   </div>
-  <button type="button" (click)="views(el._id)" routerLink="/singleProduct/{{el._id}}">View</button>
+  <button type="button" (click)="views(el._id)">View</button>
   <button type="button" (click)="toWishList(el._id)" *ngIf="!add1(el._id)">add</button>
   <button type="button" (click)="toWishList(el._id)" *ngIf="add1(el._id)">remove</button>
   <form #addToCart="ngForm" (ngSubmit)="submit(addToCart.value)">

@@ -1,1 +1,17 @@
-<p>single-cart works!</p>
+<ul *ngFor="let el of cart">
+  <li>{{el.count}}</li>
+  <li>{{el.color}}</li>
+  <li>{{el.product.title}}</li>
+  <li>{{el.product.descrption}}</li>
+  <li>{{el.product.Brand}}</li>
+  <li>{{el.product.price}}</li>
+  <li>{{el.product.quantity}}</li>
+  <li>{{el.product.category}}</li>
+  <li>{{el.product.totalRatings}}</li>
+  <li>{{el.product.views}}</li>
+  <li><img *ngFor="let img of el.product.images" src="data:image/png;base64,{{img}} " width="200px"></li>
+</ul>
+<ul>
+  <li>{{totalPrice}} totoal price</li>
+  <li>{{totalProducts}} totalProduct</li>
+</ul>

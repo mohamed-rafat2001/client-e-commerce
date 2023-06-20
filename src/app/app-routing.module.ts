@@ -17,16 +17,17 @@ import { AddProductComponent } from './admin/productCtrl/add-product/add-product
 import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
 import { UpdateProductComponent } from './admin/productCtrl/update-product/update-product.component';
 import { SingleproductComponent } from './views/products/singleproduct/singleproduct.component';
+import { SingleCartComponent } from './user/cart/single-cart/single-cart.component';
 
 const routes: Routes = [
   //admin
-  { path: 'admin', component: AdminComponent },
-  { path: 'admin/allAdmins', component: AllAdminsComponent },
-  { path: 'admin/allUsers', component: AllUsersComponent },
-  { path: 'admin/addProduct', component: AddProductComponent },
-  { path: 'admin/productList', component: AllProductListComponent },
-  { path: 'admin/updateProduct/:id', component: UpdateProductComponent },
-  { path: 'singleProduct/:id', component: SingleproductComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/allAdmins', component: AllAdminsComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/allUsers', component: AllUsersComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/addProduct', component: AddProductComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/productList', component: AllProductListComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/updateProduct/:id', component: UpdateProductComponent, canActivate: [AuthGardeService] },
+  { path: 'singleProduct/:id', component: SingleproductComponent, canActivate: [AuthGardeService] },
 
 
 
@@ -43,6 +44,9 @@ const routes: Routes = [
   { path: 'resetPassword', component: ResetPasswordComponent, canActivate: [AuthGardeService] },
   //wishList
   { path: 'wishList', component: GetComponent, canActivate: [AuthGardeService] },
+  //cart
+  { path: 'cart', component: SingleCartComponent, canActivate: [AuthGardeService] },
+
 ];
 
 @NgModule({

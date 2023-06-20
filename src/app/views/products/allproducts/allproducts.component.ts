@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Cart } from 'src/app/interfaces/cartInterface';
 import { Product } from 'src/app/interfaces/productInterface';
 import { User } from 'src/app/interfaces/userInterface';
@@ -15,7 +16,9 @@ export class AllproductsComponent implements OnInit {
   product: Product[] = []
   user?: User = {}
   cart: Cart = {}
-  constructor(private adminService: AdminService, private authService: AuthService, private cartService: CartService) { }
+  constructor(private adminService: AdminService, private authService: AuthService, private cartService: CartService,
+    private router: Router
+  ) { }
   allProduct() {
     this.adminService.allProduct().subscribe({
       next: (res: any) => {
@@ -26,7 +29,7 @@ export class AllproductsComponent implements OnInit {
       }
     })
   }
-  rate(rate: any, _id: any, inx: number) {
+  rate(rate: any, _id: any) {
     this.adminService.ratingProduct({ star: rate.target.value }, _id).subscribe({
       next: (res: any) => {
         return res
@@ -37,13 +40,8 @@ export class AllproductsComponent implements OnInit {
     })
   }
   views(id: any) {
-    this.adminService.views(id).subscribe({
-      next: (res: any) => {
-      },
-      error: (err: any) => {
 
-      }
-    })
+    this.router.navigateByUrl('/singleProduct/' + id)
   }
 
   getUser() {

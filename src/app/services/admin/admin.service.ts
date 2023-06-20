@@ -72,7 +72,4 @@ export class AdminService {
   ratingProduct(body: any, id: any) {
     return this.http.patch(this.url + 'rating/' + id, body)
   }
-  views(id: any) {
-    return this.http.get(this.url + 'product /' + id)
-  }
 }
