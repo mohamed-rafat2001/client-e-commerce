@@ -8,6 +8,7 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
   url: string = 'http://localhost:4000/'
+  /// user control
   //get all admins
   Admins() {
     return this.http.get(this.url + 'admins')
@@ -32,6 +33,8 @@ export class AdminService {
   BlockUser(id: any) {
     return this.http.patch(this.url + 'blockUser/' + id, '')
   }
+  ////////////////////////
+  //orders control
   //get all orders
   Orders() {
     return this.http.get(this.url + 'orders')
@@ -48,6 +51,8 @@ export class AdminService {
   deleteOrders() {
     return this.http.delete(this.url + 'orders')
   }
+  /////////////////////
+  //product control
   //add product
   addProduct(body: any) {
     return this.http.post(this.url + 'product', body)
@@ -71,5 +76,42 @@ export class AdminService {
   //user rating
   ratingProduct(body: any, id: any) {
     return this.http.patch(this.url + 'rating/' + id, body)
+  }
+  //////////
+  //blog constrol
+  //add blog
+  addBlog(body: any) {
+    return this.http.post(this.url + "blog", body)
+  }
+  // get blog by user
+  getBlog(id: any) {
+    return this.http.get(this.url + "blog/" + id)
+  }
+  // get blog by admin
+  AdminGetBlog(id: any) {
+    return this.http.get(this.url + "admin / blog /" + id)
+  }
+  //get all blogs
+  getBlogs() {
+    return this.http.get(this.url + "blogs/")
+  }
+  // patch blog
+  updateBlog(body: any, id: any) {
+    return this.http.patch(this.url + "blog/" + id, body)
+  }
+  // delete blog
+  deleteBlog(id: any) {
+    return this.http.delete(this.url + "blog/" + id)
+  }
+  deleteBlogs() {
+    return this.http.delete(this.url + "blogs/")
+  }
+  // like
+  like(id: any) {
+    return this.http.patch(this.url + "like/" + id, "")
+  }
+  disLike(id: any) {
+    return this.http.patch(this.url + "unLike/" + id, "")
+
   }
 }

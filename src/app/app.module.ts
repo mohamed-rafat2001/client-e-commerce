@@ -27,7 +27,6 @@ import { AllOrdersComponent } from './admin/all-orders/all-orders.component';
 import { SearchAboutOrderComponent } from './admin/search-about-order/search-about-order.component';
 import { SearchAboutUserComponent } from './admin/search-about-user/search-about-user.component';
 import { AdminLoginComponent } from './auth/admin-login/admin-login.component';
-import { UpdateCartComponent } from './user/cart/update-cart/update-cart.component';
 import { AddOrderComponent } from './user/order/add-order/add-order.component';
 import { GetComponent } from './user/wishList/get/get.component'
 import { SingleCartComponent } from './user/cart/single-cart/single-cart.component';
@@ -51,6 +50,7 @@ import { AddProductComponent } from './admin/productCtrl/add-product/add-product
 import { UpdateProductComponent } from './admin/productCtrl/update-product/update-product.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
+import { BlogsComponent } from './admin/blog/blogs/blogs.component';
 
 
 @NgModule({
@@ -76,7 +76,6 @@ import { AllProductListComponent } from './admin/productCtrl/all-product-list/al
     SearchAboutUserComponent,
     AdminLoginComponent,
     SingleCartComponent,
-    UpdateCartComponent,
     AddOrderComponent,
     GetComponent,
     UpdateBlogComponent,
@@ -96,7 +95,8 @@ import { AllProductListComponent } from './admin/productCtrl/all-product-list/al
     SingleBlogComponent,
     AddProductComponent,
     UpdateProductComponent,
-    AllProductListComponent
+    AllProductListComponent,
+    BlogsComponent
 
   ],
   imports: [

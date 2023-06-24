@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Blog } from 'src/app/interfaces/blogInteface';
 import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
-  selector: 'app-all-blog',
-  templateUrl: './all-blog.component.html',
-  styleUrls: ['./all-blog.component.css']
+  selector: 'app-blogs',
+  templateUrl: './blogs.component.html',
+  styleUrls: ['./blogs.component.css']
 })
-export class AllBlogComponent implements OnInit {
+export class BlogsComponent implements OnInit {
+
   blogs: Blog[] = []
-  singleBlog: Blog = {}
-  constructor(private adminService: AdminService) { }
+  constructor(private adminService: AdminService, private router: Router) { }
   allBlogs() {
     this.adminService.getBlogs().subscribe({
       next: (res: any) => {
@@ -21,31 +22,30 @@ export class AllBlogComponent implements OnInit {
       }
     })
   }
+  deleteBlog(id: any, inx: number) {
+    this.adminService.deleteBlog(id).subscribe({
+      next: (res: any) => {
+        this.blogs.splice(inx, 1)
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+  }
+  deleteAllBlogs() {
+    this.adminService.deleteBlogs().subscribe({
+      next: (res: any) => {
+        this.blogs = res
+        this.router.navigateByUrl('/admin/addBlog')
+      },
+      error: (err: any) => {
+        console.log(err)
+      }
+    })
+  }
   noBlogs() {
     if (this.blogs.length == 0) return true
     else return false
-  }
-  like(id: any, inx: number) {
-    this.adminService.like(id).subscribe({
-      next: (res: any) => {
-        this.blogs.splice(inx, 1, res)
-        console.log(res)
-      },
-      error: (err: any) => {
-        console.log(err)
-      }
-    })
-  }
-  disLike(id: any, inx: number) {
-    this.adminService.disLike(id).subscribe({
-      next: (res: any) => {
-        this.blogs.splice(inx, 1, res)
-        console.log(res)
-      },
-      error: (err: any) => {
-        console.log(err)
-      }
-    })
   }
   ngOnInit(): void {
     this.allBlogs()

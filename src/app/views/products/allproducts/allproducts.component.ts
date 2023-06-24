@@ -23,6 +23,7 @@ export class AllproductsComponent implements OnInit {
     this.adminService.allProduct().subscribe({
       next: (res: any) => {
         this.product = res
+        this.product.reverse()
       },
       error: (err: any) => {
         console.log(err)
@@ -73,11 +74,28 @@ export class AllproductsComponent implements OnInit {
       return false
     }
   }
+  usercart: any[] = []
+  userCart() {
+    this.cartService.getCart().subscribe({
+      next: (res: any) => {
+        this.usercart = res.products
+      }
+    })
+  }
+  clicked(id: any) {
+    // let product = this.usercart[0]?.includes(id)
+    // console.log(product)
+    // if (product) {
+    //   return true
+    // }
+    // else {
+    //   return false
+    // }
+  }
   submit(data: any) {
     this.cartService.addToCart({ products: [{ product: data.product, count: data.count, color: data.color }] }).subscribe({
       next: (res: any) => {
         this.cart = res
-        console.log(res)
       },
       error: (err: any) => {
         console.log(err)
@@ -87,6 +105,7 @@ export class AllproductsComponent implements OnInit {
   ngOnInit(): void {
     this.allProduct()
     this.getUser()
+    this.userCart()
   }
 
 }

@@ -14,11 +14,7 @@ export class CartService {
   }
   // get cart
   getCart() {
-    return this.http.get(this.url + "cart/")
-  }
-  //update cart
-  updateCart(body: any) {
-    return this.http.patch(this.url + "cart/", body)
+    return this.http.get(this.url + "cart")
   }
   //delete all cart
   deleteCart() {

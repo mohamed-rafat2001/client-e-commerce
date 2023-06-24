@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,22 @@ import { Injectable } from '@angular/core';
 })
 export class OrderService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+  url: string = 'http://localhost:4000/'
+  // creat order
+  addOrder(body: any) {
+    return this.http.post(this.url + "order", body)
+  }
+  // get order
+  getOrder() {
+    return this.http.get(this.url + "order")
+  }
+  // delete order by user
+  deleteOrderByUser(id: any) {
+    return this.http.delete(this.url + "order/" + id)
+  }
+  // delete All Order By User
+  deleteAllOrderByUser() {
+    return this.http.delete(this.url + "orders/user")
+  }
 }

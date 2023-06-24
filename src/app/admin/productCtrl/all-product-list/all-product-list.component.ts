@@ -15,6 +15,7 @@ export class AllProductListComponent implements OnInit {
     this.adminService.allProduct().subscribe({
       next: (res: any) => {
         this.product = res
+        this.product.reverse()
       },
       error: (err: any) => {
         console.log(err)

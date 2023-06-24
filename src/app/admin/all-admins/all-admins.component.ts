@@ -21,7 +21,7 @@ export class AllAdminsComponent implements OnInit {
     this.adminService.Admins().subscribe({
       next: (res: any) => {
         this.admins = res
-        console.log(this.admins)
+        this.admins.reverse()
       },
       error: (err: any) => console.log(err)
     })

@@ -22,7 +22,7 @@ export class AllUsersComponent implements OnInit {
     this.adminService.Users().subscribe({
       next: (res: any) => {
         this.users = res
-        console.log(this.users)
+        this.users.reverse()
       },
       error: (err: any) => console.log(err)
     })

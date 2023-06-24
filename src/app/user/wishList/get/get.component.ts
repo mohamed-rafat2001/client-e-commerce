@@ -7,13 +7,13 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./get.component.css']
 })
 export class GetComponent implements OnInit {
-  wishList: any = []
+  wishList: any[] = []
   constructor(private authService: AuthService) { }
   getWishList() {
     this.authService.getWishList().subscribe({
       next: (res: any) => {
         this.wishList = res
-        console.log(this.wishList)
+        this.wishList.reverse()
       },
       error: (err: any) => {
         console.log(err)

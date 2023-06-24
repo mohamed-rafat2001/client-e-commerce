@@ -40,7 +40,6 @@ export class UpdateProductComponent implements OnInit {
     Data.append('color', data.color)
     this.adminService.updateProduct(Data, this.id).subscribe({
       next: (res: any) => {
-        console.log(res)
         this.router.navigateByUrl('admin/productList')
       },
       error: (err: any) => {

@@ -22,7 +22,7 @@
     <label for="star1">☆</label>
   </div>
   <button type="button" (click)="views(el._id)">View</button>
-  <button type="button" (click)="toWishList(el._id)" *ngIf="!add1(el._id)">add</button>
+  <button type="button" (click)="toWishList(el._id)" *ngIf="!add1(el._id)">add to wishList</button>
   <button type="button" (click)="toWishList(el._id)" *ngIf="add1(el._id)">remove</button>
   <form #addToCart="ngForm" (ngSubmit)="submit(addToCart.value)">
     <label for="count">Count</label>
@@ -30,6 +30,8 @@
     <label for="color">Color</label>
     <input type="text" id="color" ngModel required name="color" #color="ngModel">
     <input type="text" id="product" hidden ngModel name="product" [(ngModel)]="el._id" #product="ngModel">
-    <button type="submit" class="btn btn-primary" [disabled]="addToCart.invalid">add to cart</button>
+    <button type="submit" class="btn btn-primary" [disabled]="addToCart.invalid">add to
+      cart</button>
+    <!-- <button type="button" *ngIf="clicked(el._id)" disabled>done</button> -->
   </form>
 </ul>
