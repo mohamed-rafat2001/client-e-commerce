@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
-  selector: 'app-all-brand-category',
-  templateUrl: './all-brand-category.component.html',
-  styleUrls: ['./all-brand-category.component.css']
+  selector: 'app-all-brand-cat',
+  templateUrl: './all-brand-cat.component.html',
+  styleUrls: ['./all-brand-cat.component.css']
 })
-export class AllBrandCategoryComponent implements OnInit {
+export class AllBrandCatComponent implements OnInit {
 
   category: any[] = []
   constructor(private adminService: AdminService) { }

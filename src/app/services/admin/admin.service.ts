@@ -134,4 +134,25 @@ export class AdminService {
   deleteProductCat(id: any) {
     return this.http.delete(this.url + "productCat/" + id)
   }
+  /////// brand category
+  //add brand category
+  addBrandCat(body: any) {
+    return this.http.post(this.url + "brandCat", body)
+  }
+  // get single brand category
+  getBrandCat(id: any) {
+    return this.http.get(this.url + "brandCat/" + id)
+  }
+  // get all brand categories by admin
+  adminBrandCats() {
+    return this.http.get(this.url + "admin/allBrandCat")
+  }
+  // get all brand categories by user
+  BrandCats() {
+    return this.http.get(this.url + "allBrandCat")
+  }
+  // delete brand category by admin
+  dltBrandCat(id: any) {
+    return this.http.delete(this.url + "brandCat/" + id)
+  }
 }

@@ -52,6 +52,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
 import { BlogsComponent } from './admin/blog/blogs/blogs.component';
 import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-cat.component';
+import { AddBrandCategoryComponent } from './admin/brandCategory/add-brand-category/add-brand-category.component';
+import { AllBrandCatComponent } from './admin/brandCategory/all-brand-cat/all-brand-cat.component';
 
 
 @NgModule({
@@ -98,9 +100,9 @@ import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-
     UpdateProductComponent,
     AllProductListComponent,
     BlogsComponent,
-    AllProCatComponent
-
-  ],
+    AllProCatComponent,
+    AddBrandCategoryComponent,
+    AllBrandCatComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,

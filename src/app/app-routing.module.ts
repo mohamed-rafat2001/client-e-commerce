@@ -29,6 +29,10 @@ import { SingleProductCategoryComponent } from './views/productCategory/single-p
 import { AllProductCategoryComponent } from './views/productCategory/all-product-category/all-product-category.component';
 import { AddProductCategoryComponent } from './admin/productCategory/add-product-category/add-product-category.component';
 import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-cat.component';
+import { AddBrandCategoryComponent } from './admin/brandCategory/add-brand-category/add-brand-category.component';
+import { AllBrandCatComponent } from './admin/brandCategory/all-brand-cat/all-brand-cat.component';
+import { SingleBrandCategoryComponent } from './views/brandCategory/single-brand-category/single-brand-category.component';
+import { AllBrandCategoryComponent } from './views/brandCategory/all-brand-category/all-brand-category.component';
 
 const routes: Routes = [
   //admin
@@ -44,6 +48,8 @@ const routes: Routes = [
   { path: 'admin/updateBlog/:id', component: UpdateBlogComponent, canActivate: [AuthGardeService] },
   { path: 'admin/allProCats', component: AllProCatComponent, canActivate: [AuthGardeService] },
   { path: 'admin/addProCat', component: AddProductCategoryComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/addBrandCat', component: AddBrandCategoryComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/allBrandCat', component: AllBrandCatComponent, canActivate: [AuthGardeService] },
 
 
 
@@ -55,6 +61,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'views/blogs', component: AllBlogComponent },
   { path: 'productCats', component: AllProductCategoryComponent },
+  { path: 'Brands', component: AllBrandCategoryComponent },
 
 
   //profile
@@ -72,6 +79,8 @@ const routes: Routes = [
   { path: 'singleBlog/:id', component: SingleBlogComponent },
   // category product
   { path: 'singleProductCat/:cat', component: SingleProductCategoryComponent },
+  // brand category
+  { path: 'singleBrandCat/:cat', component: SingleBrandCategoryComponent },
 
 
 ];
