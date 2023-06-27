@@ -51,6 +51,7 @@ import { UpdateProductComponent } from './admin/productCtrl/update-product/updat
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AllProductListComponent } from './admin/productCtrl/all-product-list/all-product-list.component';
 import { BlogsComponent } from './admin/blog/blogs/blogs.component';
+import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-cat.component';
 
 
 @NgModule({
@@ -96,7 +97,8 @@ import { BlogsComponent } from './admin/blog/blogs/blogs.component';
     AddProductComponent,
     UpdateProductComponent,
     AllProductListComponent,
-    BlogsComponent
+    BlogsComponent,
+    AllProCatComponent
 
   ],
   imports: [

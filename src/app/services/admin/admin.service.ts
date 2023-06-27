@@ -112,6 +112,26 @@ export class AdminService {
   }
   disLike(id: any) {
     return this.http.patch(this.url + "unLike/" + id, "")
-
+  }
+  /////////
+  // product category
+  // add category
+  addCategory(body: any) {
+    return this.http.post(this.url + "productCat", body)
+  }
+  // get all categories
+  categories() {
+    return this.http.get(this.url + "productCats")
+  }
+  categoriesByAdmin() {
+    return this.http.get(this.url + "admin/productCats")
+  }
+  //get single category
+  getProductcat(cat: string) {
+    return this.http.get(this.url + "productCat/" + cat)
+  }
+  // delete productCat
+  deleteProductCat(id: any) {
+    return this.http.delete(this.url + "productCat/" + id)
   }
 }

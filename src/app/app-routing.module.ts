@@ -25,6 +25,10 @@ import { BlogsComponent } from './admin/blog/blogs/blogs.component';
 import { UpdateBlogComponent } from './admin/blog/update-blog/update-blog.component';
 import { AllBlogComponent } from './views/blog/all-blog/all-blog.component';
 import { SingleBlogComponent } from './views/blog/single-blog/single-blog.component';
+import { SingleProductCategoryComponent } from './views/productCategory/single-product-category/single-product-category.component';
+import { AllProductCategoryComponent } from './views/productCategory/all-product-category/all-product-category.component';
+import { AddProductCategoryComponent } from './admin/productCategory/add-product-category/add-product-category.component';
+import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-cat.component';
 
 const routes: Routes = [
   //admin
@@ -38,6 +42,8 @@ const routes: Routes = [
   { path: 'admin/addBlog', component: AddBlogComponent, canActivate: [AuthGardeService] },
   { path: 'blogs', component: BlogsComponent, canActivate: [AuthGardeService] },
   { path: 'admin/updateBlog/:id', component: UpdateBlogComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/allProCats', component: AllProCatComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/addProCat', component: AddProductCategoryComponent, canActivate: [AuthGardeService] },
 
 
 
@@ -48,6 +54,8 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGardeService] },
   { path: 'about', component: AboutComponent },
   { path: 'views/blogs', component: AllBlogComponent },
+  { path: 'productCats', component: AllProductCategoryComponent },
+
 
   //profile
   { path: 'updateProfile', component: UpdateProfileComponent, canActivate: [AuthGardeService] },
@@ -61,7 +69,9 @@ const routes: Routes = [
   { path: 'addOrder', component: AddOrderComponent, canActivate: [AuthGardeService] },
   { path: 'singleOrder', component: SingleOrderComponent, canActivate: [AuthGardeService] },
   //single bolg
-  { path: 'singleBlog/:id', component: SingleBlogComponent, canActivate: [AuthGardeService] },
+  { path: 'singleBlog/:id', component: SingleBlogComponent },
+  // category product
+  { path: 'singleProductCat/:cat', component: SingleProductCategoryComponent },
 
 
 ];

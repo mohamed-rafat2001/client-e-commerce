@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
   selector: 'app-add-product-category',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddProductCategoryComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private adminService: AdminService, private router: Router) { }
+  onSubmit(body: any) {
+    this.adminService.addCategory(body).subscribe({
+      next: (res: any) => {
+        this.router.navigateByUrl('/admin/allProCats')
+      }
+    })
+  }
   ngOnInit(): void {
   }
 
