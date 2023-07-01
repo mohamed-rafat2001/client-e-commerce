@@ -54,6 +54,8 @@ import { BlogsComponent } from './admin/blog/blogs/blogs.component';
 import { AllProCatComponent } from './admin/productCategory/all-pro-cat/all-pro-cat.component';
 import { AddBrandCategoryComponent } from './admin/brandCategory/add-brand-category/add-brand-category.component';
 import { AllBrandCatComponent } from './admin/brandCategory/all-brand-cat/all-brand-cat.component';
+import { AllBlogCatComponent } from './admin/blogCategory/all-blog-cat/all-blog-cat.component';
+import { AllBlogCategoryComponent } from './views/blogCategory/all-blog-category/all-blog-category.component';
 
 
 @NgModule({
@@ -102,7 +104,9 @@ import { AllBrandCatComponent } from './admin/brandCategory/all-brand-cat/all-br
     BlogsComponent,
     AllProCatComponent,
     AddBrandCategoryComponent,
-    AllBrandCatComponent,],
+    AllBrandCatComponent,
+    AllBlogCatComponent,
+    AllBlogCategoryComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -33,6 +33,10 @@ import { AddBrandCategoryComponent } from './admin/brandCategory/add-brand-categ
 import { AllBrandCatComponent } from './admin/brandCategory/all-brand-cat/all-brand-cat.component';
 import { SingleBrandCategoryComponent } from './views/brandCategory/single-brand-category/single-brand-category.component';
 import { AllBrandCategoryComponent } from './views/brandCategory/all-brand-category/all-brand-category.component';
+import { AddBlogCategoryComponent } from './admin/blogCategory/add-blog-category/add-blog-category.component';
+import { SingleBlogCategoryComponent } from './views/blogCategory/single-blog-category/single-blog-category.component';
+import { AllBlogCatComponent } from './admin/blogCategory/all-blog-cat/all-blog-cat.component';
+import { AllBlogCategoryComponent } from './views/blogCategory/all-blog-category/all-blog-category.component';
 
 const routes: Routes = [
   //admin
@@ -50,6 +54,8 @@ const routes: Routes = [
   { path: 'admin/addProCat', component: AddProductCategoryComponent, canActivate: [AuthGardeService] },
   { path: 'admin/addBrandCat', component: AddBrandCategoryComponent, canActivate: [AuthGardeService] },
   { path: 'admin/allBrandCat', component: AllBrandCatComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/addBlogCat', component: AddBlogCategoryComponent, canActivate: [AuthGardeService] },
+  { path: 'admin/allBlogCat', component: AllBlogCatComponent, canActivate: [AuthGardeService] },
 
 
 
@@ -62,6 +68,7 @@ const routes: Routes = [
   { path: 'views/blogs', component: AllBlogComponent },
   { path: 'productCats', component: AllProductCategoryComponent },
   { path: 'Brands', component: AllBrandCategoryComponent },
+  { path: 'BlogCat', component: AllBlogCategoryComponent },
 
 
   //profile
@@ -81,6 +88,8 @@ const routes: Routes = [
   { path: 'singleProductCat/:cat', component: SingleProductCategoryComponent },
   // brand category
   { path: 'singleBrandCat/:cat', component: SingleBrandCategoryComponent },
+  // blog category
+  { path: 'singleBlogCat/:cat', component: SingleBlogCategoryComponent },
 
 
 ];

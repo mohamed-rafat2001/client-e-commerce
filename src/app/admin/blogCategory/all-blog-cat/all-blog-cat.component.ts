@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/services/admin/admin.service';
 
 @Component({
-  selector: 'app-all-blog-category',
-  templateUrl: './all-blog-category.component.html',
-  styleUrls: ['./all-blog-category.component.css']
+  selector: 'app-all-blog-cat',
+  templateUrl: './all-blog-cat.component.html',
+  styleUrls: ['./all-blog-cat.component.css']
 })
-export class AllBlogCategoryComponent implements OnInit {
+export class AllBlogCatComponent implements OnInit {
 
   category: any[] = []
   constructor(private adminService: AdminService) { }
@@ -14,6 +14,7 @@ export class AllBlogCategoryComponent implements OnInit {
     this.adminService.adminBlogCats().subscribe({
       next: (res: any) => {
         this.category = res
+        console.log(this.categories)
       },
       error: (err: any) => {
         console.log(err)

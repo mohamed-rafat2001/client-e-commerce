@@ -155,4 +155,25 @@ export class AdminService {
   dltBrandCat(id: any) {
     return this.http.delete(this.url + "brandCat/" + id)
   }
+  /////////////////////
+  //blog category
+  addBlogCat(body: any) {
+    return this.http.post(this.url + "blogCat", body)
+  }
+  // get single blog cat
+  getBlogCat(cat: any) {
+    return this.http.get(this.url + "blogCat/" + cat)
+  }
+  // delete blog cat
+  dltBlogCat(id: any) {
+    return this.http.delete(this.url + "blogCat/" + id)
+  }
+  // get all blog categories by admin
+  adminBlogCats() {
+    return this.http.get(this.url + "admin/allBlogCat")
+  }
+  // get all blogs categories by user
+  BlogCats() {
+    return this.http.get(this.url + "allBlogCat")
+  }
 }
