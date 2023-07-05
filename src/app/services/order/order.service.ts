@@ -9,8 +9,8 @@ export class OrderService {
   constructor(private http: HttpClient) { }
   url: string = 'http://localhost:4000/'
   // creat order
-  addOrder(body: any) {
-    return this.http.post(this.url + "order", body)
+  addOrder() {
+    return this.http.post(this.url + "order", '')
   }
   // get order
   getOrder() {

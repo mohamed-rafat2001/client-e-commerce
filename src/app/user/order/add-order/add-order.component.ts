@@ -10,8 +10,8 @@ import { OrderService } from 'src/app/services/order/order.service';
 export class AddOrderComponent implements OnInit {
 
   constructor(private orderService: OrderService, private router: Router) { }
-  addOrder(data: any) {
-    this.orderService.addOrder(data).subscribe({
+  addOrder() {
+    this.orderService.addOrder().subscribe({
       next: (res: any) => {
         this.router.navigateByUrl('/singleOrder')
         console.log(res)
